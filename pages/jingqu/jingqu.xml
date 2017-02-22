@@ -1,0 +1,37 @@
+<view style="height:{{state.height}}px" wx:if="{{state.jingqu.cover===undefined||state.scenic.map_image===undefined}}">
+  <image class="jiazai"  src="https://static-cdn.fishsaying.com/webapp/c9ebb7573715c8157e44f0f0378c5ac7.gif">
+  </image>
+</view>
+<view wx:else>
+  <view>
+    <image class="jq-image" src="{{state.jingqu.cover.source}}"></image>
+  </view>
+  <view class="jingquxiangqing">
+    <view class="jq-name">{{state.jingqu.title}}</view>
+    <view class="jqdt" style="background-image:url({{state.scenic.map_image}}@414w_219h)">
+      <view class="jq-count">
+        <view class="jq-title">{{state.jingqu.title}}</view>
+        <view class="count">{{state.jingjingqudian.sub_trim_total}}个景点</view>
+      </view>
+    </view>
+    <swiper class="swiper" interval="10000" circular="true" bindchange="121">
+      <block wx:for="{{state.sceniclist}}" wx:key="{{item._id}}">
+        <swiper-item data-id="{{item._id}}" bindtap="toScenicSpotsPage">
+          <view class="swiper-tp" style="background-image:url({{item.cover.source}}@400w_640h_1e_1c_90q)">
+            <view class="lianjie"></view>
+            <view class="jingqu-name">{{item.title}}</view>
+            <view class="story-count">{{item.voice_total}}个故事</view>
+            <view class="story">
+            <view wx:for="{{item.voices}}" wx:key="{{item._id}}">
+              <view class="story-xinxi">
+                <view></view>
+                <view bindtap="toStoryPage" data-id="{{item._id}}">{{item.title}}</view>
+              </view>
+            </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>

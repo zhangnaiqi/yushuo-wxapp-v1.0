@@ -1,0 +1,124 @@
+<view wx:if ="{{state.sceniclist[0]===undefined}}"  style="height:{{state.height}}px">
+  <image class="jiazai" src="https://static-cdn.fishsaying.com/webapp/c9ebb7573715c8157e44f0f0378c5ac7.gif">
+  </image>
+</view>
+<view wx:else>
+    <swiper class="swiper" interval="10000" circular="true" bindchange="121" indicator-dots>
+      <block>
+        <swiper-item wx:for="{{state.sceniclist}}">
+        <view wx:if ="{{item===state.sceniclist[0]}}">
+          <view>
+          <view class="first-row margin-bottom-10">
+            <view class="rel v1" data-id="{{item[0].id}}" bindtap="toSceniceSpots">
+                <image class="img1" src="{{item[0].image}}@183w_225h_1e_1c_90q" />
+                 <image class="shade shade-width" src="./shade.png"/>
+                <text class="text">{{item[0].title}}</text>
+            </view>
+            <view class="right">
+                <view class="rel v2" data-id="{{item[1].id}}" bindtap="toSceniceSpots">            
+                    <image class="img-top-r1" src="{{item[1].image}}@178w_110h_1e_1c_90q" />
+                    <image class="shade" src="./shade.png"/>
+                    <text class="text">{{item[1].title}}</text>
+                </view>
+                <view class="rel v3" data-id="{{item[2].id}}" bindtap="toSceniceSpots">
+                  <image class="img-top-r2" src="{{item[2].image}}@178w_110h_1e_1c_90q" />
+                  <image class="shade" src="./shade.png"/>
+                  <text class="text">{{item[2].title}}</text>
+                </view>
+            </view>
+            </view>
+            <view class="second-row">
+                <view class="rel v4" data-id="{{item[3].id}}" bindtap="toSceniceSpots">
+                    <image class="img-bot-l" src="{{item[3].image}}@235w_115h_1e_1c_90q" />
+                    <image class="shade shade-width" src="./shade.png"/>
+                    <text class="text">{{item[3].title}}</text>
+                </view>
+                <view class="rel v5" data-id="{{item[4].id}}" bindtap="toSceniceSpots">
+                    <image class="img-bot-r" src="{{item[4].image}}@125w_115h_1e_1c_90q" />
+                    <image class="shade" src="./shade.png"/>
+                    <text class="text">{{item[4].title}}</text>
+                </view>
+            </view>
+          </view>
+        </view>
+        <view wx:if ="{{item===state.sceniclist[1]}}">
+              <view>
+                <view class="second-row margin-bottom-10">
+                    <view class="rel v4" data-id="{{item[3].id}}" bindtap="toSceniceSpots">
+                        <image class="img-bot-l" src="{{item[3].image}}@235w_115h_1e_1c_90q" />
+                        <image class="shade shade-width" src="./shade.png"/>
+                        <text class="text">{{item[3].title}}</text>
+                    </view>
+                    <view class="rel v5" data-id="{{item[4].id}}" bindtap="toSceniceSpots">
+                        <image class="img-bot-r" src="{{item[4].image}}@125w_115h_1e_1c_90q" />
+                        <image class="shade" src="./shade.png"/>
+                        <text class="text">{{item[4].title}}</text>
+                    </view>
+                </view>
+                <view class="first-row">
+                <view class="rel v1" data-id="{{item[0].id}}" bindtap="toSceniceSpots">
+                    <image  class="img1" src="{{item[0].image}}@183w_225h_1e_1c_90q" />
+                    <image class="shade" src="./shade.png"/>
+                    <text class="text">{{item[0].title}}</text>
+                </view>
+                <view class="right">
+                    <view class="rel v2" data-id="{{item[1].id}}" bindtap="toSceniceSpots">            
+                        <image class="img-top-r1" src="{{item[1].image}}@178w_110h_1e_1c_90q" />
+                        <image class="shade" src="./shade.png"/>
+                        <text class="text">{{item[1].title}}</text>
+                    </view>
+                    <view class="rel v3" data-id="{{item[2].id}}" bindtap="toSceniceSpots">
+                    <image class="img-top-r2" src="{{item[2].image}}@178w_110h_1e_1c_90q" />
+                    <image class="shade" src="./shade.png"/>
+                    <text class="text">{{item[2].title}}</text>
+                    </view>
+                </view>
+                </view>
+          </view>
+        </view>
+        <view wx:if ="{{item===state.sceniclist[2]}}">
+            <view>
+                <view class="second-row margin-bottom-10">
+                    <view class="rel v5" data-id="{{item[4].id}}" bindtap="toSceniceSpots">
+                        <image class="img-bot-r3" src="{{item[4].image}}@125w_115h_1e_1c_90q" />
+                        <image class="shade shade-width" src="./shade.png"/>
+                        <text class="text">{{item[4].title}}</text>
+                    </view>
+                    <view class="rel v4" data-id="{{item[3].id}}" bindtap="toSceniceSpots">
+                        <image class="img-bot-l3" src="{{item[3].image}}@235w_115h_1e_1c_90q" />
+                        <image class="shade" src="./shade.png"/>
+                        <text class="text">{{item[3].title}}</text>
+                    </view>
+                </view>
+                <view class="first-row">
+                    <view class="right">
+                        <view class="rel v2" data-id="{{item[1].id}}" bindtap="toSceniceSpots">            
+                            <image class="img-top-r1" src="{{item[1].image}}@178w_110h_1e_1c_90q" />
+                            <image class="shade" src="./shade.png"/>
+                            <text class="text">{{item[1].title}}</text>
+                        </view>
+                        <view class="rel v3" data-id="{{item[2].id}}" bindtap="toSceniceSpots">
+                            <image class="img-top-r2" src="{{item[2].image}}@178w_110h_1e_1c_90q" />
+                            <image class="shade" src="./shade.png"/>
+                            <text class="text">{{item[2].title}}</text>
+                        </view>
+                    </view>
+                    <view class="rel v1" data-id="{{item[0].id}}" bindtap="toSceniceSpots">
+                        <image class="img1" src="{{item[0].image}}@183w_225h_1e_1c_90q" />
+                        <image class="shade" src="./shade.png"/>
+                        <text class="text">{{item[0].title}}</text>
+                    </view>
+                </view>
+          </view>
+        </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="search" bindtap="toSearch">
+    <icon type="search" size="22"/>
+        <view class="input"><view>搜搜你想听的沿途风景与故事</view></view>
+    </view>
+    <view class="test-bot">
+      <test>鱼说故事，处处风景</test>
+    </view>
+  </view>

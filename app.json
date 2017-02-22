@@ -1,0 +1,23 @@
+{
+    "pages": [
+        "pages/newindex/newindex",
+        "pages/index/index",
+        "pages/search/search",
+        "pages/indexmap/indexmap",
+        "pages/jingqu/jingqu",
+        "pages/scenicSpots/scenicSpots",
+        "pages/story/story",
+        "pages/index2/finished",
+        "pages/ui/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "鱼说",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true
+    },
+    "networkTimeout": {
+        "request": 10000
+    }
+}

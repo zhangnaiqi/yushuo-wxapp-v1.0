@@ -1,0 +1,28 @@
+<view style="height:{{state.height}}px" wx:if ="{{state.loaded === false}}">
+  <image class="jiazai" src="https://static-cdn.fishsaying.com/webapp/c9ebb7573715c8157e44f0f0378c5ac7.gif">
+  </image>
+</view>
+<view  wx:else >
+    <view class="scanCode" style="width: 10px; height: 10px">
+      <component key="scanCode" name="scanCode" />
+    </view>
+    <view class="search-container">
+        <input class="search-container-input" type="text" bindfocus="toSearch" placeholder="搜索你想听的内容"></input>
+        <icon class="search-container-icon" bindtap="searchClear"  type="clear" size="20"/>
+    </view>
+    <scroll-view class="story-list" lower-threshold="50" scroll-y="true" style="height:{{state.height}}px;width:100%;" bindscrolltolower="loadMore">
+    <view>
+      <view class="storylist">{{state.errMsg}}</view>
+      <view data-id="{{item._id}}" bindtap="toStoryPage" class="storylist" wx:for="{{state.voices}}" wx:key="{{item._id}}">
+        <view class="img-story" style="background-image:url({{item.cover.source}}@100w_100h)"></view>
+        <view class='story'>
+          <view class="storyname">{{item.title}}</view>
+          <view class="storyname">{{item.distance}}m</view>
+        </view>
+      </view>
+    </view>
+     <view class="refresh-block" wx:if="{{state.loadingMore}}">
+      <image class"refresh-block-image" src="./refresh.gif"></image>
+    </view>
+  </scroll-view>
+</view>

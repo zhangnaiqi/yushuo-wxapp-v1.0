@@ -1,0 +1,9 @@
+<map
+  id="map"
+  longitude="{{state.position.longitude}}"
+  latitude="{{state.position.latitude}}" scale="14" controls="{{state.controls}}" bindcontroltap="controltap"
+  markers="{{state.markers}}"
+  bindmarkertap="markertap" polyline="{{state.polyline}}" bindregionchange="regionchange"
+  show-location
+  style="width: 100%; height: {{state.sysInfo.windowHeight}}px;">
+</map>
